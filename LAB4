@@ -1,0 +1,72 @@
+!Terminal
+
+sudo mkdir ENGSE203
+cd ENGSE203
+sudo mkdir LAB4
+cd LAB4
+cd ..
+sudo chown -R $USER:$USER ENGSE203
+sudo chown -R $USER:$USER .npm
+cd ENGSE203/LAB4
+sudo npm install -g nodemon
+sudo npm install -g create-react-app
+npx create-react-app myreact
+npm start      ##เพื่อ run react บน PORT:3000เปลี่ยน PORT:3000 เป็น 3001 ใน MYREACT > package.json > (ไปแก้ตรง script)
+
+!vs code
+
+เข้าไปยัง API  
+
+package.json > ไปแก้ที่ script “dev”: ”nodemon ./server.js localhost 4000”
+server.js > แก้ PORT:4000 
+npm install
+npm run dev  #เพื่อ run database
+##ทดสอบ api ด้วยการเข้า browser > localhost:4000/api/user
+##เปิด XAMPP เพื่อ run server
+##เข้าไป config mysql และใส่ database
+index.js ##สร้าง index.js และ ใส่โค้ดลงไป
+env.js ## สร้าง env.js  และ ใส่โค้ดลงไป
+
+##สร้างโฟลเดอร์ respository แล้วสร้างไฟล์ movie.js
+
+<!------------------เปลี่ยนโค้ดบรรทัดที่  118-142 เป็น--------------------->
+//if (error) throw error;
+      if (error) {
+        console.log("error_code_msg ", error.code + ":" + error.sqlMessage);
+        pool.end();
+        return resolve({
+          statusCode: 405,
+          returnCode: 9,
+          messsage: error.code + "+" + error.sqlMessage,
+        });
+      } else {
+        console.log("results: ", results);
+        if (results.affectedRows > 0) {
+          pool.end();
+          return resolve({
+            statusCode: 200,
+            returnCode: 1,
+            messsage: "Movie list was inserted",
+          });
+        }
+      }
+    });
+  });
+<!---------------------------------------------------------------------->
+dbconfig.js #สร้าง dbconfig.js และใส่โค้ดที่เชื่อมกับ mysql
+
+เข้าไปใน MY-APP
+
+app.js ##สร้าง App.js แล้วใส่โค้ดลงไป
+
+##npm start เพื่อ run เว็บบน PORT:3001//MY-APP
+##npm run dev เพื่อ run API ที่เชื่อมต่อกับ PORT:4000 ที่มีฐานข้อมูล 3 USER//API
+
+<!---------------------------------------------------------------------->
+####กรณี run หน้าเว็บไม่ติดอาจเกิดจาก version react ที่สูงเกินไป ใช้คำสั่ง ใน MY.APP
+
+export NODE_OPTIONS=--openssl-legacy-provider
+
+แล้วจึง npm start ใหม่
+<!--------------------------------END----------------------------------->
+

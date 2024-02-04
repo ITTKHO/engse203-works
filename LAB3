@@ -1,0 +1,2 @@
+sudo -i // เข้าไปยัง root
+usermod -aG sudo itthipon // ปรับแต่ง 
