@@ -1,2 +1,1 @@
-sudo -i // เข้าไปยัง root
-usermod -aG sudo itthipon // ปรับแต่ง 
+เปลี่ยนชื่อ webserver และ run react
